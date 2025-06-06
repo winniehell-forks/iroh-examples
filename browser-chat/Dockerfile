@@ -1,4 +1,4 @@
-FROM rust AS depdencies
+FROM rust AS dependencies
 
 COPY . .
 
@@ -9,9 +9,9 @@ RUN rustup target add wasm32-unknown-unknown
 RUN cargo install wasm-bindgen-cli wasm-pack
 RUN cd frontend && npm run build:wasm && npm install
 
-FROM depdencies AS builder
+FROM dependencies AS builder
 RUN cd frontend && npm run build
 
-FROM builder AS server
+FROM nginx
 
-ENTRYPOINT npx http-server frontend/dist/
+COPY --from=builder frontend/dist/ /usr/share/nginx/html

@@ -9,4 +9,4 @@ services:
     build:
       context: ./browser-chat
     ports:
-      - "62041:8080"
+      - "62041:80"
