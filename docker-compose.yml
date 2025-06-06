@@ -1,0 +1,12 @@
+services:
+  browser-echo1:
+    build:
+      context: ./browser-echo
+    ports:
+      - "62041:8080"
+
+  browser-echo2:
+    build:
+      context: ./browser-echo
+    ports:
+      - "62042:8080"
