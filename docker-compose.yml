@@ -1,12 +1,12 @@
 services:
-  browser-echo1:
+  browser-echo:
     build:
       context: ./browser-echo
+    ports:
+      - "62040:8080"
+
+  browser-chat:
+    build:
+      context: ./browser-chat
     ports:
       - "62041:8080"
-
-  browser-echo2:
-    build:
-      context: ./browser-echo
-    ports:
-      - "62042:8080"
