@@ -20,3 +20,7 @@ tracing-subscriber-wasm = "0.1.0"
 wasm-bindgen = "=0.2.100"
 wasm-bindgen-futures = "0.4"
 wasm-streams = "0.4.2"
+
+# iroh depends on getrandom 0.2 and 0.3
+# https://docs.rs/getrandom/0.3.3/getrandom/#webassembly-support
+_getrandom_alias_3 = { version = "0.3", package = "getrandom", features = ["wasm_js"]}
